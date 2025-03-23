@@ -37,75 +37,76 @@ email_form = os.getenv("EMAIL_FORM")
 try:
     with SB(uc=True, headed=True, xvfb=True) as sb:
         sb.uc_open_with_reconnect("https://visa.vfsglobal.com/gbr/en/ita/login", reconnect_time=12)
-        sb.sleep(30)
+        # sb.sleep(30)
+        #
+        # sb.uc_click("#onetrust-reject-all-handler")
+        # sb.sleep(10)
+        #
+        # sb.click("//*[@id='mat-input-4']")
+        # sb.sleep(10)
+        #
+        # for ch in list(password_vfs):
+        #     if ch == " ":
+        #         sb.click('//*[@name="{space}"]')
+        #
+        #     elif ch in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']:
+        #         sb.click(f'//button[@name="{ch}"]')
+        #
+        #     elif ch in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']:
+        #         sb.click_if_visible('//*[@name="{shift}"]')
+        #         sb.click(f'//*[@name="{ch}"]')
+        #         sb.click_if_visible('//*[@name="{shift}"]')
+        #
+        #     elif ch in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
+        #               '9', ")", "@", ";", "-", ":", "/", '"', "$", "(", "&"
+        #               ".", "?", ",", "'", "!"
+        #     ]:
+        #         sb.click_if_visible('//*[@name="{numeric}"]')
+        #         sb.click(f'//*[@name="{ch}"]')
+        #         sb.click_if_visible('//*[@name="{alphabetic}"]')
+        #
+        #     elif ch in ["[", "]", "{", "}", "#", "%", "^", "*", "+", "=", "_"
+        #               "\"", "|" , "~" , "<" , ">", "€", "¥", "£", "•", ".", ","
+        #               ,"?", "!", "'"
+        #     ]:
+        #         sb.click_if_visible('//*[@name="{numeric}"]')
+        #         sb.click_if_visible('//*[@name="{symbolic}"]')
+        #         sb.click(f'//*[@name="{ch}"]')
+        #         sb.click_if_visible('//*[@name="{alphabetic}"]')
+        #
+        #
+        # sb.type('//*[@id="email"]', email_vfs)
+        # sb.sleep(10)
+        #
+        # # sb.uc_click(submit_button, reconnect_time=4)
+        # sb.save_screenshot("screenshot1.png")
+        #
+        # sb.uc_gui_click_captcha()
+        #
+        # sb.save_screenshot("screenshot2.png")
+        #
+        # sb.click('//button[contains(@class, "btn-brand-orange")]')
+        # # AVOID BOT DETECTION
+        # sb.disconnect()
+        #
+        # sb.sleep(60)
+        #
+        # sb.reconnect()
+        # otp = check_email(gmail_email, gmail_password)
+        #
+        # sb.type("//*[@id='mat-input-5']", otp)
+        # sb.save_screenshot("screenshot3.png")
+        #
+        # sb.uc_gui_click_captcha()
+        #
+        # sb.save_screenshot("screenshot4.png")
+        #
+        # sb.click('//button[contains(@class, "btn-brand-orange")]')
+        #
+        # sb.save_screenshot("screenshot5.png")
+        # sb.disconnect()
 
-        sb.uc_click("#onetrust-reject-all-handler")
-        sb.sleep(10)
-
-        sb.click("//*[@id='mat-input-4']")
-        sb.sleep(10)
-
-        for ch in list(password_vfs):
-            if ch == " ":
-                sb.click('//*[@name="{space}"]')
-
-            elif ch in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']:
-                sb.click(f'//button[@name="{ch}"]')
-
-            elif ch in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']:
-                sb.click_if_visible('//*[@name="{shift}"]')
-                sb.click(f'//*[@name="{ch}"]')
-                sb.click_if_visible('//*[@name="{shift}"]')
-
-            elif ch in ['0', '1', '2', '3', '4', '5', '6', '7', '8',
-                      '9', ")", "@", ";", "-", ":", "/", '"', "$", "(", "&"
-                      ".", "?", ",", "'", "!"
-            ]:
-                sb.click_if_visible('//*[@name="{numeric}"]')
-                sb.click(f'//*[@name="{ch}"]')
-                sb.click_if_visible('//*[@name="{alphabetic}"]')
-
-            elif ch in ["[", "]", "{", "}", "#", "%", "^", "*", "+", "=", "_"
-                      "\"", "|" , "~" , "<" , ">", "€", "¥", "£", "•", ".", ","
-                      ,"?", "!", "'"
-            ]:
-                sb.click_if_visible('//*[@name="{numeric}"]')
-                sb.click_if_visible('//*[@name="{symbolic}"]')
-                sb.click(f'//*[@name="{ch}"]')
-                sb.click_if_visible('//*[@name="{alphabetic}"]')
-
-
-        sb.type('//*[@id="email"]', email_vfs)
-        sb.sleep(10)
-
-        # sb.uc_click(submit_button, reconnect_time=4)
-        sb.save_screenshot("screenshot1.png")
-
-        sb.uc_gui_click_captcha()
-
-        sb.save_screenshot("screenshot2.png")
-
-        sb.click('//button[contains(@class, "btn-brand-orange")]')
-        # AVOID BOT DETECTION
-        sb.disconnect()
-
-        sb.sleep(60)
-
-        sb.reconnect()
-        otp = check_email(gmail_email, gmail_password)
-
-        sb.type("//*[@id='mat-input-5']", otp)
-        sb.save_screenshot("screenshot3.png")
-
-        sb.uc_gui_click_captcha()
-
-        sb.save_screenshot("screenshot4.png")
-
-        sb.click('//button[contains(@class, "btn-brand-orange")]')
-
-        sb.save_screenshot("screenshot5.png")
-        sb.disconnect()
-
+        input()
         # Book Appointment
         sb.reconnect()
         sb.click('//button[contains(@class, "btn-brand-orange")]')
@@ -157,17 +158,17 @@ try:
         sb.click(f"//span[text()=' {current_nationality} ']")  # ALGERIA
 
         # FORM
-        sb.type("//input[@id='mat-input-6']", first_name)
-        sb.type("//input[@id='mat-input-7']", last_name)
+        sb.type("//input[@placeholder='Enter Given Name/ First Name/ Other Name']", first_name)
+        sb.type("//input[@placeholder='Enter Last Name/ Surname/ Family Name.']", last_name)
 
         # Gender*
-        sb.click('//div[contains(@class, "ng-tns-c75-12")]')
+        sb.click("mat-select[role='combobox']")
         if gender == "Female":
-            sb.click("//mat-option[@id='mat-option-248']")  # Female
+            sb.click("//mat-option[.//span[text()=' Female ']]")
         elif gender == "Male":
-            sb.click("//mat-option[@id='mat-option-249']")  # Male
+            sb.click("//mat-option[.//span[text()=' Male ']]")
         else:
-            sb.click("//mat-option[@id='mat-option-250']")  # Others/Trans
+            sb.click("//mat-option[.//span[text()=' Others / Transgender ']]")
 
         sb.type("//input[@id='mat-input-8']", passport_number)
 
